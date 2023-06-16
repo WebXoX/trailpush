@@ -36,7 +36,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 char				*ft_strchr(const char *s, int c);
 char				**ft_split(char const *s, char c);
 char				*ft_substr(const char *s, unsigned int start, size_t len);
-int					ft_atoi(const char *nptr, int move, int * status, int sign);
+int					ft_atoi(const char *nptr, int * status, int sign);
 void				freed(char **a);
 size_t				ft_strlen(const char *s);
 t_list				*split(char *argc, int * status);

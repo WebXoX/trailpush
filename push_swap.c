@@ -18,25 +18,29 @@ void	algo1(t_list **a, t_list **b, int divide, int total)
 	int	i;
 	int	j;
 	int	amt;
+    int total2;
 
 	i = total / divide - 2;
-	while (i != -1)
-	{
-		j = 0;
-		amt = chunck(total, i, divide);
-		total = ft_lstsize((*a));
-		while ((*a))
-		{
-			if (j == total)
-				break ;
-			if (amt >= (*a)->amount)
-				pab(&(*a), &(*b), 2);
-			else
-				rab(&(*a), 1);
-			j++;
-		}
-		i--;
-	}
+	
+	  while(i != -1){
+        j=0;
+            amt =chunck(total,i,divide);
+        total2 = ft_lstsize((*a));
+            
+        while ((*a))
+            {
+            if(j == total2)
+                break;
+            if(amt >= (*a)->amount){
+                pab(&(*a),&(*b),2);
+            }
+            else{
+                rab(&(*a),1);
+            }
+            j++;
+            }  
+            i--;
+        }
 }
 
 void	algo2(t_list **a, t_list **b, int jk, int k)
@@ -101,9 +105,7 @@ void	push_caller(t_list **a, int *status, char *argc[], int argv)
 		{
 			if (checker(argc[i]) == 1)
 				return ;
-			if (argv >= 3)
-				move = ft_atoi(argc[i], move,status,1);
-			move = ft_atoi(argc[i], move,status,1);
+			move = ft_atoi(argc[i],status,1);
 			tmp = ft_lstnew(move);
 			ft_lstadd_back(&(*a), tmp);
 		}

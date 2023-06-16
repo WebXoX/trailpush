@@ -26,11 +26,10 @@ int	spacexsign(const char *nptr, int i, int *sign)
 	return (i);
 }
 
-int	ft_atoi(const char *nptr, int move, int * status, int sign)
+int	ft_atoi(const char *nptr, int * status, int sign)
 {
 	int			i;
 	long long	result;
-			// (**status) = 1;
 
 	result = 0;
 	i = spacexsign(nptr, 0, &sign);
