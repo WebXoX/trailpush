@@ -20,10 +20,15 @@ int	checker(char *str)
 	flag = 0;
 	i = 0;
 	if (str[0] == '\0')
+	{
+		write(1, "Error\n", 6);
 		return (1);
+	}
 	while (str[i] != '\0')
 	{
-		if (!((str[0] == '-') || (str[i] >= '0' && str[i] <= '9')))
+		if (str[0] == '-' || str[0] == '+')
+			i++;
+		if (!((str[i] >= '0' && str[i] <= '9')))
 		{
 			flag = 1;
 			write(1, "Error\n", 6);
@@ -53,7 +58,7 @@ t_list	*split(char *argc, int * status)
 			ft_lstclear(&first, free);
 			return (NULL);
 		}
-		move = ft_atoi(str[i], move, (status),1);
+		move = ft_atoi(str[i], (status),1);
 		ft_lstadd_back(&first, ft_lstnew(move));
 		i++;
 	}

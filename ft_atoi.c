@@ -38,12 +38,12 @@ int	ft_atoi(const char *nptr, int * status, int sign)
 		if (sign == -1 && result > 2147483648)
 		{
 				(*status) = 1;
-			return (move);
+			return (result);
 		}
 		if (sign == 1 && result > 2147483647 )
 			{
 				(*status) = 1;
-				return (move);
+				return (result);
 			}
 		if (nptr[i] >= '0' && nptr[i] <= '9')
 			result = result * 10 + (nptr[i] - '0');
